@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MusicPlayer</string>
+    <string name="notification_channel_name">Music channel</string>
+    <string name="notification_channel_description">Music channel description</string>
+
+    <string name="connection_exception">Can\'t get correct response from server</string>
+
+</resources>
