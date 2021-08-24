@@ -15,7 +15,7 @@ class TracksListViewModel : ViewModel() {
     private val repository = Repository.get()
 
     private val _album = MutableLiveData<Album>()
-    val album: LiveData<Album> = _album
+    private val album: LiveData<Album> = _album
 
     private val _tracksList = MutableLiveData<List<Track>>()
     val tracksList: LiveData<List<Track>> = _tracksList
@@ -31,7 +31,7 @@ class TracksListViewModel : ViewModel() {
         loadTracks()
     }
 
-    suspend fun loadPreview(track: Track): Bitmap {
+    suspend fun loadPreview(): Bitmap {
 
         val preview = repository.getPreview(album.value!!.coverUrl)
 

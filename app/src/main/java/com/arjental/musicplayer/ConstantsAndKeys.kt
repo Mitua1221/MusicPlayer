@@ -7,9 +7,6 @@ object ConstantsAndKeys {
     const val NOTIFICATION_CHANNEL_ID = "NOTIFICATION_CHANNEL_ID"
     const val NOTIFICATION_ID = 132
 
-    private const val MY_MEDIA_ROOT_ID = "media_root_id"
-    private const val MY_EMPTY_MEDIA_ROOT_ID = "empty_root_id"
-
     const val MEDIA_ROOT_ID = "root_id"
 
     val firstSong = Song("First", "https://enazadevkz.cdnvideo.ru/tank3/medialand/2021_05_12/1.mp3")
@@ -20,7 +17,5 @@ object ConstantsAndKeys {
 
     const val ALBUM_ID = "AlbumId"
     const val TRACK_ID = "TrackId"
-
-    const val FROM_TRACK_LIST_TO_PLAYER_BITMAP = "FromTrackListTolPlayerBitmap"
 
 }

@@ -3,8 +3,8 @@ package com.arjental.musicplayer.services.callbacks
 import android.app.Notification
 import android.content.Intent
 import androidx.core.content.ContextCompat
+import com.arjental.musicplayer.ConstantsAndKeys.NOTIFICATION_ID
 import com.arjental.musicplayer.services.MusicPlayerService
-import com.arjental.musicplayer.services.NOTIFICATION_ID
 import com.google.android.exoplayer2.ui.PlayerNotificationManager
 
 class MusicPlayerNotificationListener(

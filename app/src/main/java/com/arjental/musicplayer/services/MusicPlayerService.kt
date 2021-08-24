@@ -7,19 +7,18 @@ import android.support.v4.media.MediaBrowserCompat
 import android.support.v4.media.MediaDescriptionCompat
 import android.support.v4.media.MediaMetadataCompat
 import android.support.v4.media.session.MediaSessionCompat
-import android.support.v4.media.session.PlaybackStateCompat
 import androidx.media.MediaBrowserServiceCompat
 import com.arjental.musicplayer.ConstantsAndKeys.MEDIA_ROOT_ID
 import com.arjental.musicplayer.services.callbacks.MusicPlaybackPreparer
 import com.arjental.musicplayer.services.callbacks.MusicPlayerEventListener
 import com.arjental.musicplayer.services.callbacks.MusicPlayerNotificationListener
 import com.google.android.exoplayer2.Player
-import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector
 import com.google.android.exoplayer2.ext.mediasession.TimelineQueueNavigator
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
-import com.google.android.exoplayer2.util.Util
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 private const val TAG = "MusicService"
 
@@ -27,7 +26,7 @@ class MusicPlayerService : MediaBrowserServiceCompat() {
 
     private val exoPlayer = InstanceHolder.get().exoPlayer
 
-    var dataSourceFactory: DefaultDataSourceFactory = InstanceHolder.get().dataSourceFactory
+    private var dataSourceFactory: DefaultDataSourceFactory = InstanceHolder.get().dataSourceFactory
 
     val musicSource = MusicSource()
 
@@ -132,7 +131,7 @@ class MusicPlayerService : MediaBrowserServiceCompat() {
         clientPackageName: String,
         clientUid: Int,
         rootHints: Bundle?
-    ): BrowserRoot? {
+    ): BrowserRoot {
         return BrowserRoot(MEDIA_ROOT_ID, null)
     }
 

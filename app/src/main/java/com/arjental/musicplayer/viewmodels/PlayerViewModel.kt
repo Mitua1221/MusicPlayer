@@ -49,11 +49,8 @@ class PlayerViewModel : ViewModel() {
 
     private val musicServiceConnection = MusicServiceConnection.get()
 
-    val isConnected = musicServiceConnection.isConnected
-    val networkError = musicServiceConnection.networkError
-    val curPlayingSong = musicServiceConnection.curPlayingSong
     var curPlayingSongTitle: String? = null
-    val playbackState = musicServiceConnection.playbackState
+    private val playbackState = musicServiceConnection.playbackState
 
     private val _isPlaying = MutableLiveData<Boolean>()
     val isPlaying: LiveData<Boolean> = _isPlaying

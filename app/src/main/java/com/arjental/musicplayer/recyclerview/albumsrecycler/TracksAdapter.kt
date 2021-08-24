@@ -18,7 +18,7 @@ import kotlinx.coroutines.launch
 class TracksAdapter(
     val fragmentManager: FragmentManager,
     val viewModel: TracksListViewModel,
-    val scope: CoroutineScope,
+    private val scope: CoroutineScope,
 ) :
     RecyclerView.Adapter<TracksAdapter.TracksViewHolder>() {
 
@@ -63,7 +63,7 @@ class TracksAdapter(
 
             if (viewModel.tracksList.value!![position].downloadedTrackCover == null) {
                 scope.launch (Dispatchers.Default) {
-                    val preview = viewModel.loadPreview(viewModel.tracksList.value!![position])
+                    val preview = viewModel.loadPreview()
                     launch (Dispatchers.Main) {
                         binding.albumPreview.setImageBitmap(preview)
                     }

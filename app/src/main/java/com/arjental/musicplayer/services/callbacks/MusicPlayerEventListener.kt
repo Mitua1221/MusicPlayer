@@ -16,6 +16,6 @@ class MusicPlayerEventListener(private val musicPlayerService: MusicPlayerServic
 
     override fun onPlayerError(error: ExoPlaybackException) {
         super.onPlayerError(error)
-        Toast.makeText(musicPlayerService, "An unknown error occured", Toast.LENGTH_LONG).show()
+        Toast.makeText(musicPlayerService, "An unknown error occurred", Toast.LENGTH_LONG).show()
     }
 }

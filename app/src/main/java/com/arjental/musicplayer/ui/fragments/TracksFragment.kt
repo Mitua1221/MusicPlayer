@@ -61,8 +61,7 @@ class TracksFragment : Fragment(R.layout.tracks_fragment) {
         savedInstanceState: Bundle?
     ): View {
         _binding = TracksFragmentBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

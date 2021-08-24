@@ -18,7 +18,7 @@ class GlideImageDownloader(val context: Context) {
 
         var bitmap: Bitmap? = null
 
-        val te = Glide.with(context)
+        Glide.with(context)
             .asBitmap()
             .placeholder(R.drawable.ic_launcher_foreground)
             .load(url)

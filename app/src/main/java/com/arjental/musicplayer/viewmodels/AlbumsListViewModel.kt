@@ -8,7 +8,7 @@ import kotlinx.coroutines.launch
 
 class AlbumsListViewModel : ViewModel() {
 
-    val repository = Repository.get()
+    private val repository = Repository.get()
 
     private val _albumsList = MutableLiveData<List<Album>>()
     val albumsList: LiveData<List<Album>> = _albumsList
